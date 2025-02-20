@@ -39,16 +39,13 @@ console.log("Deepar version: " + deepar.version);
   // Initialize DeepAR with an effect file.
   try {
     deepAR = await deepar.initialize({
-      licenseKey: "your_license_key_goes_here",
+      licenseKey: "098c0d38bada8b5db7197325fa6f0ff5833227c5e4cc433e627c2d9e0651a8a5d017b403aa9efaaa",
       previewElement,
       effect: effectList[0],
-      // Removing the rootPath option will make DeepAR load the resources from the JSdelivr CDN,
-      // which is fine for development but is not recommended for production since it's not optimized for performance and can be unstable.
-      // More info here: https://docs.deepar.ai/deepar-sdk/platforms/web/tutorials/download-optimizations/#custom-deployment-of-deepar-web-resources
       rootPath: "./deepar-resources",
       additionalOptions: {
         cameraConfig: {
-          // facingMode: 'environment'  // uncomment this line to use the rear camera
+          facingMode: 'environment'  // uncomment this line to use the rear camera
         },
       },
     });
